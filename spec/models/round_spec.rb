@@ -9,7 +9,7 @@ describe Round do
   it "should allow matchs" do
     round = FactoryGirl.create(:round)
     10.times do 
-      round.matchs << FactoryGirl.create(:match)
+      FactoryGirl.create(:match, {round_id: round.id})
     end
     round.should be_valid
     round.matchs.count.should be(10)
