@@ -100,4 +100,16 @@ describe User do
 
   end
 
+  describe "as player" do
+    before(:each) do
+      @player = User.create!(@attr)
+    end
+
+    it "can search for matches" do
+      match = FactoryGirl.create(:match)
+      match.player_id = @player.id
+      @player.matches.should_not be_nil
+    end
+  end
+
 end

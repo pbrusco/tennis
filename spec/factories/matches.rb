@@ -2,7 +2,8 @@
 
 FactoryGirl.define do
   factory :match do
-    player_id 1
-    opponent_id 1
+    round
+    association :player, factory: :user
+    association :opponent, factory: :user
   end
 end
