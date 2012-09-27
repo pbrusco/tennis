@@ -12,13 +12,14 @@ describe Match do
     round = FactoryGirl.create(:round)
 
     m = Match.new
-    m.player_id = FactoryGirl.create(:user).id
-    m.round_id = round.id
+    user = FactoryGirl.create(:user)
+    m.player = user
+    m.round = round
     m.should_not be_valid
   
     m = Match.new 
-    m.opponent_id = FactoryGirl.create(:user).id
-    m.round_id = round.id
+    m.opponent = FactoryGirl.create(:user)
+    m.round = round
     m.should_not be_valid
   end
 end
