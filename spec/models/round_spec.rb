@@ -12,7 +12,7 @@ describe Round do
       round.matches << FactoryGirl.create(:match)
     end
     round.should be_valid
-    round.matchs.count.should be(10)
+    round.matches.count.should be(10)
   end
 
 end
